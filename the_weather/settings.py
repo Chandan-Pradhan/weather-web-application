@@ -118,4 +118,20 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
+
 STATIC_URL = '/static/'
+
+#this defines the location of static files in local development
+STATICFILES_DIRS = [os.path.join(BASE_DIR,  'static'), ]
+
+#it is the location of static files for production
+STATIC_ROOT = os.path.join(BASE_DIR,  'staticfiles')
+
+#staticfiles finders it tells django how to search for static files
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder'
+]
+
+
+
