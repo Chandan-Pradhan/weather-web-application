@@ -2,7 +2,7 @@ import requests
 from django.shortcuts import render
 from .models import City
 from .forms import CityForm
-
+import os
 
 def index(request):
 
@@ -12,7 +12,7 @@ def index(request):
         form = CityForm()
 
         try:
-            weather_key = '2140004b122066c33d4c3361cd2ef42b'
+            weather_key = os.environ['WEATHER_KEY']
             url = 'https://api.openweathermap.org/data/2.5/weather'
             pam = {'appid': weather_key, 'q': city, 'units': 'Metric'}
             response = requests.get(url, params=pam)

@@ -8,6 +8,10 @@ verify_ssl = true
 [packages]
 django = "==2.2"
 requests = "*"
+psycopg2 = "*"
+gunicorn = "*"
+whitenoise = "*"
+dj-database-url = "*"
 
 [requires]
 python_version = "3.8"
